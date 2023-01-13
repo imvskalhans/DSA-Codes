@@ -5,7 +5,7 @@ int  main()
 int size;
 cin>>size;
 
-    int a[size],b[size];
+    int a[size],b[size],count[100];
     for(i=0;i<size;i++)
     {
         cin>>a[i];
@@ -22,8 +22,13 @@ cin>>size;
             if(a[i]==a[j])
                 {
                     d++;
+                    
+                count[i]=d;
+                    
                 }
+            
         }
+       
             if(d>=2)
                 {
                     cout<<a[i]<<" is duplicate - no of times--"<<d<<endl;
