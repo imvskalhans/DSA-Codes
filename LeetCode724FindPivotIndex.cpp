@@ -46,6 +46,6 @@ int main()
     int size;
     int arr[100]={1,7,3,6,5,6};
     int search =pivot(arr,6);
-   cout<<"peak value =" <<call<<endl;
+   cout<<"peak value =" <<pivot<<endl;
     
 } 

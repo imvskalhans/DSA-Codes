@@ -75,7 +75,7 @@ int rotatedsearch(int arr[],int s, int e, int key)
 }
 int main()
 {
-    int arr[10]={7,8,9,1,2,3,4};
+    int arr[10]={8,9,2,4,5,6,7};
     int key;
     cout<<"enter the key value"<<endl;
     cin>>key;

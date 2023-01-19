@@ -1,3 +1,4 @@
+#include<bits/stdc++.h> 
 #include<iostream>
 using namespace std;
 
@@ -32,11 +33,32 @@ int peaksearch(int arr[], int size)
     
 }
 
+
 int main()
 {
-    int key,size;
-    int arr[100]={0,2,3,4,5,2,0};
-    int search =peaksearch(arr,7);
+    // Get the array
+    int arr[] = {2,1,3,4};
+ 
+    // Compute the sizes
+    int n = sizeof(arr) / sizeof(arr[0]);
+ 
+    // Print the array
+    cout << "Array: ";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+ 
+    // Find the maximum element
+    int m=*max_element(arr, arr + n);
+    int search =peaksearch(arr,n);
     cout<<"peak value =" <<search<<endl;
+   
+    if(m==search)
+    {
+        cout<<"true"<<endl;
+    }
+    else
+    {
+    cout<<"false"<<endl;
+    }
     
 } 
