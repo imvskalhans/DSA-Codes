@@ -47,8 +47,6 @@ int rotate(int arr[],int s,int k)
     
 }
 
-
-
 int main()
 {
     int k;
@@ -59,3 +57,4 @@ int main()
     int search =rotate(arr,7,k);
   
 }
+

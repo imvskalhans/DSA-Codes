@@ -5,8 +5,7 @@ int pivot(int arr[],int size)
     int first=0,last=size-1;
     int ls=0,rs=0;
      int mid=first + (last-first/2);
-     int sumls(int mid)
-     {
+     int sumls(int mid){
      for(int i=0;i<mid;i++)
      {
         ls=ls+arr[i];
