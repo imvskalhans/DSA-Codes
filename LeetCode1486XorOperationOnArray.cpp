@@ -16,17 +16,7 @@ using namespace std;
 
 
 int xorOperation(int n, int start) {
-      /*
-      wrong approach
-       int nums[n];
-        int ans=0;
-        for(int i=start;i<=n;i=start + 2 * i)
-        {
-            ans=ans^nums[i];
-        }
-        return ans;
-    }
-    */
+      
       int nums[n];
         int ans = 0;
 
@@ -52,7 +42,17 @@ int main()
 }
 
 
-
+/*
+      wrong approach
+       int nums[n];
+        int ans=0;
+        for(int i=start;i<=n;i=start + 2 * i)
+        {
+            ans=ans^nums[i];
+        }
+        return ans;
+    }
+    */
 
  /*
  another approach
