@@ -41,6 +41,6 @@ int main()
     while (std::cin >> input) {
         salary.push_back(input);
     }
-    int result=average(salary);
-    cout<<"average = "<<result<<endl;
+    double result=average(salary);
+    cout<<"average = "<<std::fixed<<std::setprecision(5)<<result<<endl;
 }

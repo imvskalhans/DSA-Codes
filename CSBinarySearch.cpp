@@ -6,7 +6,7 @@ int binarysearch(int arr[], int size,int key)
     int first=0,last=size-1;
     
     
-     int mid=first + (last-first/2);
+     int mid=first + (last-first)/2;
     while(first<=last)
     {
       
@@ -23,7 +23,7 @@ int binarysearch(int arr[], int size,int key)
         {
             last=mid-1;
         }
-        mid=first + (last-first/2);
+        mid=first + (last-first)/2;
         }
     
         
