@@ -50,6 +50,28 @@ using namespace std;
     //addition of 2d matrix
 
 
+    //2d vector input
+    
+  /* #include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int rows, cols;
+    cin >> rows >> cols;
+
+    vector<vector<int>> my2DVector(rows, vector<int>(cols));
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cin >> my2DVector[i][j];
+        }
+    }
+    return 0;
+}
+*/
+
+
 
 
  }
