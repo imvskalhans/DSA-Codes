@@ -1,9 +1,15 @@
- #include<iostream>
- #include<vector>
- #include<algorithm>
- #include <iomanip>
-using namespace std;
 
+/*
+25 jan Solution by Vishal Singh
+leetcode
+74. Search a 2D Matrix
+Medium
+You are given an m x n integer matrix matrix with the following two properties:
+Each row is sorted in non-decreasing order.
+The first integer of each row is greater than the last integer of the previous row.
+Given an integer target, return true if target is in matrix or false otherwise.
+You must write a solution in O(log(m * n)) time complexity.
+//our approach fsils in few test cases
 bool binarysearch(vector<vector<int>> nums ,int i, int j,int col, int target)
 {
   int  s=i,e=j+col,temp=i;
@@ -46,6 +52,36 @@ bool searchMatrix(vector<vector<int>> &nums, int target)
     return false;
 
 
+}
+*/
+ #include<iostream>
+ #include<vector>
+ #include<algorithm>
+ #include <iomanip>
+using namespace std;
+// best approach
+   bool searchMatrix(vector<vector<int>>& matrix, int target) {
+         int row=matrix.size();
+    int col=matrix[0].size();
+  int  s=0,e=(row*col)-1;
+    while(s<=e)
+    {
+        int mid = s+ (e-s)/2;
+        int element = matrix[mid/col][mid%col];
+        if(element==target)
+        {
+            return true;
+        }
+        else if(target<element)
+        {
+            e=mid-1;
+        }
+        else{
+            s=mid+1;
+        }
+
+    }
+    return false;
 }
 
 
