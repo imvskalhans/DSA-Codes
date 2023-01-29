@@ -1,7 +1,19 @@
 #include<iostream>
 using namespace std;
-int main()
+
+  string reverseString(string s) {
+        int f=0,l=s.size()-1;
+        while(f<=l)
+        {
+            swap(s[f++],s[l--]);
+        }
+        return s;
+    }
+     int main()
 {
-    string s={"anuragandu"};
-    cout<<s.size();
+    string s;
+    cout<<"enter the string s"<<endl;
+    getline (cin, s);
+    string result = reverseString(s);
+    cout<<result;
 }
