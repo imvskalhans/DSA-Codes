@@ -2,25 +2,37 @@
 #include<vector>
 using namespace std;
 
-vector<int> shifting(vector<int> nums)
-{
-    vector<int> ans;
-    int temp=0,i=0;
-    int s=nums.size()-1;
-    while(i<=s)
-    {
-        if(nums[i]==nums[i+1])
-        {
-        }
-        else{
-            ans.push_back(nums[i]);
-            //ans.push_back(nums[i+1]);
-        }
-    
-        i++;
+/*
+vector<int> shiftArrayRight(vector<int> nums) {
+    int k=2;
+    vector<int> temp;
+    for (int i = 0; i < nums.size(); i++) {
+        temp[(i + k) % nums.size()] = nums[i];
     }
-    return ans;
+    for (int i = 0; i < nums.size(); i++) {
+        nums[i] = temp[i];
+    }
+    return nums;
+}
+*/
 
+
+vector<int> shiftArrayRight(vector<int> nums , int k) {
+    int n= nums.size()-1;
+    k %= n;
+    int count = 0;
+    for (int start = 0; count < n; start++) {
+        int current = start;
+        int prev = nums[start];
+        do {
+            int next = (current + k) % n;
+            int temp = nums[next];
+            nums[next] = prev;
+            prev = temp;
+            current = next;
+            count++;
+        } while (start != current);
+    }
 }
 
 
@@ -38,7 +50,7 @@ int main()
     }
     cout<<endl;
 
-    vector<int> result=shifting(nums);
+    vector<int> result=shiftArrayRight(nums,2);
     for(int i=0;i<result.size();i++)
     {
         cout<<result[i]<<" ";
