@@ -55,7 +55,7 @@ int main()
         nums.push_back(input);
     }
     vector<int> result=removeDuplicates(nums,&newsize);
-    cout<<"duplicates = ";
+    cout<<"final array = ";
     for(int i=0;i<newsize;i++)
     {
         cout<<result[i]<<" ";
