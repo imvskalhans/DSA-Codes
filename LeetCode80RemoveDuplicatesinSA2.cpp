@@ -34,6 +34,23 @@ for (int i = 0; i < k; i++) {
 }
 If all assertions pass, then your solution will be accepted.
 
+best approach
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int i=0;
+        for(int k=0;k<nums.size();k++)
+        {
+            if(i<2||nums[k]>nums[i-2])
+            {
+                nums[i]=nums[k];
+                i++;
+            }
+        }
+        return i;
+    }
+}
+
 */
 
 
