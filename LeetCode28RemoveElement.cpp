@@ -52,14 +52,15 @@ vector<int> removeElement(vector<int>& nums, int val, int* newsize) {
 int main()
 {
     vector<int> nums;
-    int newsize=0,val;
-    cout<<"enter value to remove"<<endl;
-    cin>>val;
+    int newsize=0;
+   //cout<<"enter value to remove"<<endl;
+    //cin>>val;
     cout<<"enter nums"<<endl;
      int input;
     while (std::cin >> input) {
         nums.push_back(input);
     }
+    int val;
     cout<<"enter value to remove"<<endl;
     cin>>val;
     vector<int> result=removeElement(nums,val,&newsize);
