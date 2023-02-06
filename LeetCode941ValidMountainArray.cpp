@@ -1,29 +1,33 @@
+//wrong
+
 #include<iostream>
 #include<vector>
 using namespace std;
 
 bool validMountainArray(vector<int>& arr) {
+    int n=arr.size();
     int i=0;
-    int j=1;
-    int k=0;
-    for(int j=1;j<arr.size();j++)
-    {
-        if(arr[j]>arr[i])
+    int j=n-1;
+    while(i+1<n&&j>0)
+   {
+        if(arr[i+1]>arr[i])
         {
             i++;
         }
-        else{
-            k=j;
-            for(int i=k;i<arr.size();i++)
-            {
-                if(arr[i]>arr[i+1])
-                {
-                    return true;
-                }
-            }
+        else {
+            return false;
         }
+        if(arr[j]<arr[j-1])
+        {
+            j--;
+        }
+        else
+        {
+            return false;
+        }
+       
     }
-    return false;
+    return i==j-1;
         
 }
 
