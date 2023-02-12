@@ -22,5 +22,5 @@ int main()
     int num;
     cout<<"enter the value of n"<<endl;
     cin>>num;
-    cout<< "pivotInteger ="<<countEven(num)<<endl;
+    cout<< "No of digits with even digit sum till n ="<<countEven(num)<<endl;
  }
