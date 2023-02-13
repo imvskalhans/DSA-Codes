@@ -1,5 +1,5 @@
 // use recursion  to solve 10000000
-
+//
 #include<iostream>
 using namespace std;
 void map(int n)
