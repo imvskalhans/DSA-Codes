@@ -8,8 +8,8 @@ lc 989
 using namespace std;
 
  vector<int> addToArrayForm(vector<int>& num, int k) {
-        int number=0;
-        int sum=0;
+        long  int number=0;
+        long long int sum=0;
         vector<int> ans;
         for(int i=0;i<num.size();i++)
         {
