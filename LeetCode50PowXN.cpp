@@ -1,5 +1,5 @@
 /*
-
+Leet code 50
 */
 
 #include<iostream>
