@@ -1,6 +1,8 @@
 /*
-
+LC 2161
 */
+
+//need coreection 
 #include<iostream>
 #include<vector>
 
@@ -16,7 +18,7 @@ vector<int> pivotArray(vector<int>& nums, int pivot) {
             else
             {
                nums.insert(nums.begin() + i, pivot);
-               nums.erase(nums.begin() + i);
+               nums.erase(nums.begin() + i); 
 
                break;
             }
