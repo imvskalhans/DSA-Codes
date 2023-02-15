@@ -1,1 +1,1 @@
-cout<<fibo<<" ";
+cout <<s<<endl;
