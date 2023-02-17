@@ -36,8 +36,13 @@ int firstUniqChar2(string s)
     }
     for(int i=0;i<=l;i++)
     {
-        
+        if(ch[s[i]-'a']==1)
+        {
+            cout<<"character is "<<s[i]<<endl;
+            return i;
+        }
     }
+    return -1;
 }
 
 
