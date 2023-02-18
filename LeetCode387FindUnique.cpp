@@ -18,7 +18,7 @@ int firstUniqChar(string s)
                 break;
             }
         }
-        if(j=l+1)
+        if(j==l+1)
         {
             return i;
         }
