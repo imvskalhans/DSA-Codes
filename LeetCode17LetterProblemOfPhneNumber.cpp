@@ -1,54 +1,58 @@
 /*
+17. Letter Combinations of a Phone Number
+Medium
+14.1K
+813
+Companies
+Given a string containing digits from 2-9 inclusive, return all possible letter 
+combinations that the number could represent. Return the answer in any order.
 
+A mapping of digits to letters (just like on the telephone buttons) is given below
+. Note that 1 does not map to any letters.
+
+
+ 
 */
 
 #include<iostream>
 #include<vector>
+#include<string>
 using namespace std;
 
-vector<string> map(int n)
-{
-    switch(n)
+void solve(string digits,int index,string output,vector<string>& ans,string mapping[])
     {
-    case 2:  vector<string> s2 {"abc"} ; return s2;
-    break;
-     case 3: vector<string> s3 {"def"} ; return s3;
-    break;
-     case 4: vector<string> s4 {"ghi"} ; return s4;
-    break;
-     case 5: vector<string> s5 {"jkl"} ; return s5;
-    break;
-     case 6: vector<string> s6 {"mno"} ; return s6;
-    break;
-     case 7: vector<string> s7 {"pqrs"} ; return s7;
-    break;
-     case 8: vector<string> s8 {"tuv"} ; return s8;
-    break;
-     case 9: vector<string> s9 {"wxyz"} ; return s9;
-    break;
-}
-}
+        //base case
+        if(index>=digits.length())
+        {
+            ans.push_back(output);
+            return;
+        }
+        //find number
+        int number=digits[index]-'0';
+        string value=mapping[number];
+        //recursive call
+        for(int i=0;i<value.size();i++)
+        {
+            output.push_back(value[i]);
+            solve(digits,index+1,output,ans,mapping);
+            output.pop_back();
+        }
+    }
 
 vector<string> letterCombinations(string digits) {
-    
-          vector<int> ans;
-          vector<string>q = map(digits[0]);
-          vector<string>w = map(digits[1]);
-          for(int i=0;i<q.size();i++)
-          {
-            for(int j=0;j<w.size();j++)
-            {
-                if(i!=j)
-                {
-                    ans.push_back(q[i]);
-                    ans.push_back(w[j]);
-                }
-
-            }
-          }
-  
+        vector<string> ans;
+        if(digits.length()==0)
+        {
+            return ans;
+        }
+        string output;
+        int index=0;
+        string mapping[10] = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+        solve(digits,index,output,ans,mapping);
+        return ans;
         
     }
+
 
 
 
@@ -56,7 +60,11 @@ vector<string> letterCombinations(string digits) {
 {
     string s;
     cout<<"enter the string s"<<endl;
-    getline (cin s);
-    vector<string> result  letterCombinations(s);
-    cout<<result;
+    getline (cin ,s);
+    vector<string> result = letterCombinations(s);
+    
+    for (string word : result) {
+        cout << word << " ";
+    }
+    cout << endl;
 }
