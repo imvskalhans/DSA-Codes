@@ -55,7 +55,7 @@ void merge(vector<int> &num, int s, int e)
 
 }
 
-void mergesort(vector<int> &num , int s , int e )
+ void mergesort(vector<int> &num , int s , int e )
 {
     //base case
     if(s>=e)
@@ -71,14 +71,10 @@ void mergesort(vector<int> &num , int s , int e )
 
     //merging and sorting two arrays
     merge(num,s,e);
-
-
-
-
 }
 
 
-int main()
+    int main()
 {
     vector<int> num;
     cout<<"enter num"<<endl;
@@ -89,8 +85,8 @@ int main()
     int s=0;
     int e=num.size()-1;
     mergesort(num,s,e);
+    cout<< "sorted array is -";
     for(int i=0; i< num.size();i++){
         cout<<" "<<num[i]<<" ";
-    }cout<<endl;
-    
+        }cout<<endl;
 }
