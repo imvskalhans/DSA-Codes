@@ -24,7 +24,7 @@ string sortSentence(string s)
     }
     words.push_back(word);
     string result = "";
-    for (int i = 1; i <= words.size(); i++)
+    for (int i = 1; i <= 9; i++)
     {
         for (string w : words)
         {
@@ -35,7 +35,7 @@ string sortSentence(string s)
         }
     }
     return result.substr(0, result.size() - 1);
-    
+
 }
 
 
