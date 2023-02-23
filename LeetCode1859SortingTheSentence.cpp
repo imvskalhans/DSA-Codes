@@ -8,7 +8,7 @@ using namespace std;
 
 string sortSentence(string s)
 {
-    vector<string> words; // Create a vector to store the words in the shuffled sentence
+    vector<string> words; 
     string word = "";
     for (char c : s)
     {
