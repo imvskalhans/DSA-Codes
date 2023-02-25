@@ -1,10 +1,9 @@
 /*
 LeeCode 123 Best Time to Buy and Sell Stock III
 Hard
-Say you have an array for which the ith element is the price of a given stock on day i.
-Design an algorithm to find the maximum profit. You may complete at most two transactions.
-Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).
-
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+Find the maximum profit you can achieve. You may complete at most two transactions.
+Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
 */
 
 #include <iostream>
@@ -13,20 +12,29 @@ using namespace std;
 //
 int maxProfit(vector<int> &prices)
 {
-    int maxProfit = 0;
-    int minPrice = INT_MAX;
-    for (int i = 0; i < prices.size(); i++)
+    int n = prices.size();
+    if (n == 0)
+        return 0;
+    vector<int> left(n, 0);
+    vector<int> right(n, 0);
+    int minPrice = prices[0];
+    for (int i = 1; i < n; i++)
     {
-        if (prices[i] < minPrice)
-        {
-            minPrice = prices[i];
-        }
-        else if (prices[i] - minPrice > maxProfit)
-        {
-            maxProfit = prices[i] - minPrice;
-        }
+        minPrice = min(minPrice, prices[i]);
+        left[i] = max(left[i - 1], prices[i] - minPrice);
     }
-    return maxProfit;
+    int maxPrice = prices[n - 1];
+    for (int i = n - 2; i >= 0; i--)
+    {
+        maxPrice = max(maxPrice, prices[i]);
+        right[i] = max(right[i + 1], maxPrice - prices[i]);
+    }
+    int result = 0;
+    for (int i = 0; i < n; i++)
+    {
+        result = max(result, left[i] + right[i]);
+    }
+    return result;
 }
 
 
