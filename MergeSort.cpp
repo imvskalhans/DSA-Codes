@@ -64,7 +64,7 @@ void merge(vector<int> &num, int s, int e)
     }
     int mid=s+(e-s)/2;
     //left part breaking
-    mergesort(num,s,mid);
+    mergesort(num,s,mid-1);
 
     //right part breaking
     mergesort(num,mid+1,e);
