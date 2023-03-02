@@ -14,7 +14,7 @@ class Lnode {
         this-> data = data;
         this->next = NULL;
     }
-}
+};
 
 int main()
 {
