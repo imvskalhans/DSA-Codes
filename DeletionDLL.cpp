@@ -1,14 +1,14 @@
 /*
-Doubly linked list Practice
+
 */
 #include<iostream>
 using namespace std;
-
-class Node{
-    public:
-        int data;
-        Node *prev;
-        Node *next;
+class Node
+{
+public:
+    int data;
+    Node *prev;
+    Node *next;
 
     Node(int data)
     {
@@ -18,10 +18,10 @@ class Node{
     }
 };
 
-void print(Node* &head)
+void print(Node *&head)
 {
     Node *temp = head;
-    while(temp!=NULL)
+    while (temp != NULL)
     {
         cout << temp->data << " ";
         temp = temp->next;
@@ -29,7 +29,7 @@ void print(Node* &head)
     cout << endl;
 }
 
-void insertAtHead(Node* &head , int data)
+void insertAtHead(Node *&head, int data)
 {
     Node *temp = new Node(data);
     temp->next = head;
@@ -45,20 +45,20 @@ void insertAtTail(Node *&tail, int data)
     tail = temp;
 }
 
-void insertatposition(Node* &head, Node* &tail, int pos , int data)
+void insertatposition(Node *&head, Node *&tail, int pos, int data)
 {
-    if(pos==1)
+    if (pos == 1)
     {
         insertAtHead(head, data);
         return;
     }
     Node *nodetoinsert = new Node(data);
     Node *temp = head;
-    for (int i = 0; i < pos-1;i++)
+    for (int i = 0; i < pos - 1; i++)
     {
         temp = temp->next;
     }
-    if(temp->next == NULL)
+    if (temp->next == NULL)
     {
         insertAtTail(tail, data);
         return;
@@ -70,7 +70,11 @@ void insertatposition(Node* &head, Node* &tail, int pos , int data)
         temp->next = nodetoinsert;
         nodetoinsert->prev = temp;
     }
-   
+}
+
+void deletenode(Node* &head , int pos)
+{
+
 }
 
 int main()
@@ -96,5 +100,4 @@ int main()
     insertatposition(head, tail, 8, 1889);
     print(head);
     return 0;
-
 }
