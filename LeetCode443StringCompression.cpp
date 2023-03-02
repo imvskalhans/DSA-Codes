@@ -41,3 +41,32 @@ int main()
     int result = compress(chars);
     cout << result << endl;
 }
+/*
+approach 2
+int compress(vector<char>& chars) {
+    //int count[26] = { 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z' };
+    int count[26] = {0};
+    for(char c : chars)
+    {
+        count[c - 'a']++;
+    }
+    string ans = "";
+    for(int i = 0; i < 26; i++)
+    {
+        if(count[i] > 0)
+        {
+            ans += (char)('a' + i);
+            if(count[i] > 1)
+            {
+                ans += to_string(count[i]);
+            }
+        }
+    }
+    int len = ans.length();
+    for(int i =0 ; i<len; i++)
+    {
+        chars[i]=ans[i];
+    }
+    return len;
+}
+*/
