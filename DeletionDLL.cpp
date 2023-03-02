@@ -1,5 +1,5 @@
 /*
-
+deletion need correction
 */
 #include<iostream>
 using namespace std;
@@ -74,7 +74,30 @@ void insertatposition(Node *&head, Node *&tail, int pos, int data)
 
 void deletenode(Node* &head , int pos)
 {
+    Node *temp = head;
+    if(pos==1)
+    {
+        temp->next->prev = NULL;
+        head = temp->next;
+        temp->next = NULL;
+    }
 
+    for (int i = 1; i <= pos ;i++)
+    {
+        temp = temp->next;
+    }
+    if(temp->next==NULL)
+    {
+        temp->prev = NULL;
+        temp->prev->next = NULL; 
+    }
+    else{
+        temp->prev = NULL;
+       temp->prev->next = temp->next;
+       temp->next = NULL;
+       temp->next->prev = temp->prev;
+       
+    }
 }
 
 int main()
@@ -98,6 +121,12 @@ int main()
     insertatposition(head, tail, 7, 188);
     print(head);
     insertatposition(head, tail, 8, 1889);
+    print(head);
+    deletenode(head, 1);
+    print(head);
+    deletenode(head, 8);
+    print(head);
+    deletenode(head, 5);
     print(head);
     return 0;
 }
