@@ -30,8 +30,10 @@ int largestInteger(int num)
         i++;
         num = num / 10;
     }
-    vector<int> ans(i-1,0);
-    cout << i-1;
+    int size = i - 1;
+    vector<int> ans;
+    cout << i-1<<endl;
+
     sort(odd.begin(), odd.end());
     for (int i = 0; i < odd.size();i++)
     {
@@ -46,17 +48,23 @@ int largestInteger(int num)
     cout << endl;
     int n = odd.size();
     int m = even.size();
+    int j = 0;
     int k = 0;
-    while(k<ans.size())
+
+    for (int i = 0; i < size; i++)
     {
-        ans.push_back(even[m--]);
-        k++;
-        if(ans.size()>k)
+        if (i % 2 == 0)
         {
-           ans.push_back(odd[n--]); 
+            ans.push_back(even[j]);
+            m--;
         }
-        k++;
+        else
+        {
+            ans.push_back(odd[k]);
+            n--;
+        }
     }
+
     for(int i=0;i<ans.size();i++)
     {
         cout<<ans[i]<<" ";
