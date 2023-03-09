@@ -55,12 +55,12 @@ int largestInteger(int num)
     {
         if (i % 2 == 0)
         {
-            ans.push_back(even[j]);
+            ans.push_back(even[m]);
             m--;
         }
         else
         {
-            ans.push_back(odd[k]);
+            ans.push_back(odd[n]);
             n--;
         }
     }
