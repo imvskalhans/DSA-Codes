@@ -7,13 +7,10 @@ Medium
 #include<vector>
 #include<algorithm>
 using namespace std;
-
 int largestInteger(int num)
 {
-    
     vector<int> odd;
     vector<int> even;
-    
     int result = 0;
     int i = 1;
     while (num > 0)
@@ -34,14 +31,14 @@ int largestInteger(int num)
     vector<int> ans;
     cout << i-1<<endl;
 
-    sort(odd.begin(), odd.end());
+    sort(odd.begin(), odd.end(), greater<int>());
     for (int i = 0; i < odd.size();i++)
     {
         cout << odd[i] << " ";
     }
     cout << endl;
-    sort(even.begin(), even.end());
-    for (int i = 0; i < odd.size(); i++)
+    sort(even.begin(), even.end(), greater<int>());
+    for (int i = 0; i < even.size(); i++)
     {
         cout << even [i] << " ";
     }
@@ -50,18 +47,22 @@ int largestInteger(int num)
     int m = even.size();
     int j = 0;
     int k = 0;
-
     for (int i = 0; i < size; i++)
     {
         if (i % 2 == 0)
         {
-            ans.push_back(even[m]);
-            m--;
+            if(j==m)
+            {
+                ans.push_back(odd[k]);
+                break;
+            }
+            ans.push_back(even[j]);
+            j++;
         }
         else
         {
-            ans.push_back(odd[n]);
-            n--;
+            ans.push_back(odd[k]);
+            k++; 
         }
     }
 
