@@ -20,7 +20,8 @@ int main()
        cout<<endl;
        
         i=i+1;
-        
+         
+         
         
     }
 }
