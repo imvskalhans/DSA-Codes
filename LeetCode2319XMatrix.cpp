@@ -26,6 +26,7 @@ bool checkXMatrix(vector<vector<int>>& grid){
                 }
             }
         }
+        
         return true;
     }
 
