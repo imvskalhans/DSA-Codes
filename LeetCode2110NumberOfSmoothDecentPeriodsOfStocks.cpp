@@ -9,14 +9,26 @@ A smooth decent period is a subsequence of the given string s such that:
 #include<unordered_map>
 using namespace std;
 
-int numberOfDecentPeriods(string s)
-{
-    
-}
+    long long getDescentPeriods(vector<int> & prices)
+    {
+        long long count = 1;
+        int l = 0;
+        for (int i = 1; i < prices.size(); i++)
+        {
+            if (prices[i] + 1 != prices[i - 1])
+            {
+                l = i;
+                count++;
+            }
+            else
+                count += i - l + 1;
+        }
+        return count;
+    }
 
 int main()
 {
-    string s = "1234";
-    cout << numberOfDecentPeriods(s) << endl;
+    vector<int> prices = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    cout << getDescentPeriods(prices) << endl;
     return 0;
 }
