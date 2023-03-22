@@ -6,8 +6,6 @@ You are given an array coordinates, coordinates[i] = [x, y], where [x, y] repres
 #include <iostream>
 #include <string>
 #include <vector>
-#include <unordered_map>
-#include <stack>
 #include <algorithm>
 using namespace std;
 
