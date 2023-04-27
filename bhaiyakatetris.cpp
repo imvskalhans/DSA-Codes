@@ -80,7 +80,7 @@ void tetrimino(){
     tetriminos[2].push_back(make_pair(7*grid_width,height-2*grid_width));
 
 
-    tetriminos[3].push_back(make_pair(6*grid_width,height-grid_width));
+    tetriminos[3].push_back(make_pair(6*grid_width,height-grid_width));m
     tetriminos[3].push_back(make_pair(7*grid_width,height-grid_width));
     tetriminos[3].push_back(make_pair(8*grid_width,height-grid_width));
     tetriminos[3].push_back(make_pair(7*grid_width,height-2*grid_width));
