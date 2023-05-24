@@ -1,18 +1,12 @@
 class Solution {
 public:
     vector<long long> sumOfThree(long long num) {
-        vector<long long>ans;
-        long long mid = num/3;
-        if(mid-1 + mid + mid+1 == num)
+        long long x = num - 3;
+        if(x%3 == 0)
         {
-            ans.push_back(mid-1);
-            ans.push_back(mid);
-            ans.push_back(mid+1);
+            x = x/3;
+            return {x, x+1, x+2};
         }
-        else
-        {
-            return ans;
-        }
-        return ans;
+        return {};
     }
 };
