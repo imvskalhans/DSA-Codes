@@ -2,14 +2,11 @@ class Solution {
 public:
     bool isPrefixString(string s, vector<string>& words) {
     string concatStr;
-    int i = 0;
-
-    while (i < words.size() && concatStr.length() < s.length()) 
+    for(auto word: words)
     {
-        concatStr += words[i];
-        i++;
+        concatStr += word;
+        if(concatStr == s) return true;
     }
-
-    return concatStr == s; 
+    return false;
     }
 };
