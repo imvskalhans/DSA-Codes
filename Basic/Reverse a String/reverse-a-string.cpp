@@ -15,12 +15,9 @@ class Solution
     string reverseWord(string str)
     {
         // Your code goes here
-        int start = 0;
-        int end = str.size()-1;
-        while(start<end){
-            swap(str[start],str[end]);
-            start++;
-            end--;
+        for(int i = 0 ; i<str.size()/2 ; i++)
+        {
+            swap(str[i] , str[(str.size()-1)-i]);
         }
         return str;
     }
