@@ -13,13 +13,40 @@ class Solution{
     // l : starting index of the array i.e 0
     // r : ending index of the array i.e size-1
     // k : find kth smallest element and return using this function
-    int kthSmallest(int arr[], int l, int r, int k) {
-    // Sort the array in the range [l, r]
-    std::sort(arr + l, arr + r + 1);
-    
-    // Return the kth smallest element, which is at index l + k - 1 in the sorted array.
-    return arr[l + k - 1];
+   int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+
+    for (int j = low; j < high; j++) {
+        if (arr[j] <= pivot) {
+            i++;
+            std::swap(arr[i], arr[j]);
+        }
     }
+
+    std::swap(arr[i + 1], arr[high]);
+    return i + 1;
+}
+
+int quickSelect(int arr[], int low, int high, int k) {
+    if (low <= high) {
+        int pivotIndex = partition(arr, low, high);
+
+        if (pivotIndex == k) {
+            return arr[pivotIndex];
+        } else if (pivotIndex < k) {
+            return quickSelect(arr, pivotIndex + 1, high, k);
+        } else {
+            return quickSelect(arr, low, pivotIndex - 1, k);
+        }
+    }
+
+    return -1; // Kth smallest not found
+}
+
+int kthSmallest(int arr[], int l, int r, int k) {
+    return quickSelect(arr, l, r, k - 1);
+}
 };
 
 //{ Driver Code Starts.
